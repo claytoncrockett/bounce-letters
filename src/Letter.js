@@ -20,12 +20,17 @@ class Letter extends React.Component {
   };
 
   mover = (el, bounding) => {
-    this.collisionCheck(el, bounding);
-    el.style.left = el.offsetLeft + this.props.vx + "px";
-    el.style.top = el.offsetTop + this.props.vy + "px";
-    this.itemTimeout = setTimeout(() => {
-      this.mover(el, bounding);
-    }, 10);
+    if (this.props.bouncing) {
+      this.collisionCheck(el, bounding);
+      el.style.left = el.offsetLeft + this.props.vx + "px";
+      el.style.top = el.offsetTop + this.props.vy + "px";
+      this.itemTimeout = setTimeout(() => {
+        this.mover(el, bounding);
+      }, 10);
+    } else {
+      el.style.left = this.props.finalPosition[1] + "px";
+      el.style.top = this.props.finalPosition[0] + "px";
+    }
   };
 
   start = el => {
@@ -43,8 +48,13 @@ class Letter extends React.Component {
   }
 
   render() {
+    let floating = "floating";
+    if (!this.props.bouncing) {
+      floating += " floating-end";
+    }
+
     return (
-      <div className="floating" ref={this.myRef}>
+      <div className={floating} ref={this.myRef}>
         <h1 className="nameheader">{this.props.letter}</h1>
       </div>
     );

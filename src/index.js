@@ -6,6 +6,7 @@ import "./styles.css";
 
 function App() {
   return <Application />;
+  s;
 }
 
 const rootElement = document.getElementById("root");

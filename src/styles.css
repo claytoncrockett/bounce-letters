@@ -1,7 +1,7 @@
 #App {
   font-family: sans-serif;
-  width: 1280px;
-  height: 720px;
+  width: 98vw;
+  min-height: 98vh;
   position: relative;
 }
 
@@ -16,4 +16,31 @@
 
 .floating {
   position: absolute;
+}
+
+.floating-end {
+  position: absolute;
+  transition: top 2s ease, left 2s ease, transform 2s ease 2s;
+  transform: scale(2) rotateY(360deg);
+}
+
+.begin {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11vw;
+  height: 8vh;
+  border: solid yellowgreen;
+  border-radius: 5%;
+  top: 45%;
+  left: 45%;
+  color: yellowgreen;
+}
+
+.begin:hover {
+  color: white;
+  background-color: yellowgreen;
+  cursor: pointer;
 }
