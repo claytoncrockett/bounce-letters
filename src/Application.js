@@ -1,5 +1,6 @@
 import React from "react";
 import Letter from "./Letter";
+import Slide from "./Slide";
 
 class Application extends React.Component {
   state = {
@@ -105,6 +106,7 @@ class Application extends React.Component {
             );
           })}
         </div>
+        {!this.state.bouncing && <Slide />}
       </div>
     );
   }

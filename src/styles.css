@@ -44,3 +44,99 @@
   background-color: yellowgreen;
   cursor: pointer;
 }
+
+.slideclip {
+  position: absolute;
+  width: 100vw;
+  top: 25%;
+  left: 5%;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  animation: fadein;
+  animation-duration: 1.5s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+.leftouter {
+  position: absolute;
+  z-index: 2;
+  width: 30vw;
+  height: 200px;
+  background-color: rgba(244, 66, 80, 0.8);
+  overflow: hidden;
+  transition: width 1s ease-in-out;
+}
+
+.left {
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  width: 90vw;
+  height: 200px;
+}
+
+.leftouter:hover {
+  width: 90vw;
+  transition: width 1s ease-in-out;
+}
+
+.leftword {
+  position: relative;
+  right: 5%;
+  color: white;
+  font-size: 8vw;
+  transition: 1s ease-in-out;
+}
+
+.rightouter {
+  position: absolute;
+  z-index: 1;
+  width: 90vw;
+  height: 200px;
+  background-color: white;
+  overflow: hidden;
+  transition: width 1s ease-in-out;
+}
+
+.right {
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  width: 90vw;
+  height: 200px;
+}
+
+.rightword {
+  position: relative;
+  right: 5%;
+  color: black;
+  font-size: 8vw;
+  transition: 1s ease-in-out;
+}
+
+.wordshift {
+  right: 0;
+  transition: 1s ease-in-out;
+}
+
+.relativecontainer {
+  position: relative;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
